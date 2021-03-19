@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-
 void main() {
   runApp(MaterialApp(home: MyPage()));
 }
@@ -27,24 +26,21 @@ class _MyPageState extends State<MyPage> {
     });
   }
 
-  void alignTextToCenter() {
-    Align(
+  alignTextToCenter() {
+    return new Align(
         alignment: Alignment.center,
-        child:Text(
-        'Привет Flutter!',
-        textDirection: TextDirection.ltr,
-    )
-    );
+        child: Text(
+          'Hey there!',
+          textDirection: TextDirection.ltr,
+        ));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: InkWell(
-          onTap: changeRandomColor,
-          child: Container(
-            color: color,
-          ),
-        ));
+      onTap: changeRandomColor,
+      child: Container(color: color, child: alignTextToCenter()),
+    ));
   }
 }
